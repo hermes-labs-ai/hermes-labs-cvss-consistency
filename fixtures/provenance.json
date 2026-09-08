@@ -1,0 +1,22 @@
+{
+  "fixtures": {
+    "CVE-2026-14216.after.json": {
+      "fixture_sha256": "a332205630575b6a78a68c26f43cc9680320c0628784e06a4f4a0014684e4c3c",
+      "source_commit": "fa52a90c974f64966065f0beb9f4ffcefaf1208f",
+      "source_path": "cves/2026/14xxx/CVE-2026-14216.json",
+      "source_repository": "https://github.com/CVEProject/cvelistV5",
+      "source_sha256": "e26c9471af79fd99628b72e076da241094dd1a1baf581a0d5b82ed659de0db6b",
+      "transformation": "Complete source record; one trailing LF appended. JSON content and ordering are unchanged."
+    },
+    "CVE-2026-14216.before.json": {
+      "fixture_sha256": "738dedae4b2b61f9fe4141dcb0a17c7aa8fb9001600cbccc3d971c21c189cf4c",
+      "source_commit": "b4481a9ea6cbb1e36ba9a746ef29de45b95567f8",
+      "source_path": "2026/14xxx/CVE-2026-14216.json",
+      "source_repository": "https://github.com/cisagov/vulnrichment",
+      "source_sha256": "536943bf57784c9ffae61a076d2a9316859a7ccafec9c48cbe347ec16314a596",
+      "transformation": "Complete source record; one trailing LF appended. JSON content and ordering are unchanged."
+    }
+  },
+  "retrieval_date": "2026-09-08",
+  "schema_version": 1
+}
