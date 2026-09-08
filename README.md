@@ -1,15 +1,15 @@
-# Hermes CVSS Consistency
+# Hermes Labs CVSS Consistency
 
 An offline, read-only CLI that checks whether CVSS 3.0 and 3.1 base scores stored in local CVE 5.x JSON records agree with their vectors. It never fetches data or tests a target.
 
 ## Replay the correction
 
 ```console
-git clone https://github.com/hermes-labs-ai/hermes-cvss-consistency.git
-cd hermes-cvss-consistency
+git clone https://github.com/hermes-labs-ai/hermes-labs-cvss-consistency.git
+cd hermes-labs-cvss-consistency
 python -m venv .venv && . .venv/bin/activate
 python -m pip install -e '.[test]'
-python -m hermes_cvss_consistency fixtures/CVE-2026-14216.before.json fixtures/CVE-2026-14216.after.json
+python -m hermes_labs_cvss_consistency fixtures/CVE-2026-14216.before.json fixtures/CVE-2026-14216.after.json
 ```
 
 The before fixture exits `1` with the CISA ADP score mismatch (`5.3` stated, `6.5` computed). The after fixture exits `0` and computes `6.5`. When both are supplied together, the mismatch makes the combined command exit `1`.
@@ -17,8 +17,8 @@ The before fixture exits `1` with the CISA ADP score mismatch (`5.3` stated, `6.
 Use the checker on one CVE JSON object, a JSON array of records, or several local files:
 
 ```console
-python -m hermes_cvss_consistency record.json --format json
-hermes-cvss-consistency records-a.json records-b.json --format text
+python -m hermes_labs_cvss_consistency record.json --format json
+hermes-labs-cvss-consistency records-a.json records-b.json --format text
 ```
 
 JSON output has a stable top-level envelope with the tool and schema versions, resolved `cvss` dependency version, file errors, and metric results. Each result contains `cve_id`, `record_index`, `metric_version`, `vector`, `stated_score`, `computed_score`, `status`, `json_path`, and `metric_source`. The record index, JSON Pointer path, and provider metadata make repeated array records and CNA versus ADP metrics distinguishable. Results are ordered by input, path, and metric version; object keys are sorted when serialized.

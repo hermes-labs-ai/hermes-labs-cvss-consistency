@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
-title: "Hermes CVSS Consistency"
+title: "Hermes Labs CVSS Consistency"
 abstract: "An offline checker for stored CVSS 3 score/vector consistency in local CVE 5.x JSON records."
 authors:
   - family-names: "Bosch Rodriguez"
@@ -9,7 +9,7 @@ authors:
 version: "0.1.0"
 date-released: "2026-09-08"
 license: MIT
-repository-code: "https://github.com/hermes-labs-ai/hermes-cvss-consistency"
+repository-code: "https://github.com/hermes-labs-ai/hermes-labs-cvss-consistency"
 url: "https://hermes-labs.ai/case-studies/cisa-vulnrichment-score-consistency"
 keywords:
   - CVSS

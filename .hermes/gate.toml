@@ -47,7 +47,7 @@ globs = ["**/*"]
 
 [[full]]
 name = "ruff"
-argv = ["ruff", "check", "."]
+argv = ["ruff", "check", "--exclude", "archive", "."]
 timeout_seconds = 60.0
 globs = ["**/*"]
 

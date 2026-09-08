@@ -3,7 +3,7 @@ requires = ["setuptools>=69"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "hermes-cvss-consistency"
+name = "hermes-labs-cvss-consistency"
 version = "0.1.0"
 description = "Offline CVE record checker for stored CVSS 3 score/vector consistency"
 readme = "README.md"
@@ -16,12 +16,12 @@ dependencies = ["cvss==3.6"]
 test = ["pytest>=8,<9"]
 
 [project.scripts]
-hermes-cvss-consistency = "hermes_cvss_consistency.__main__:main"
+hermes-labs-cvss-consistency = "hermes_labs_cvss_consistency.__main__:main"
 
 [project.urls]
 Homepage = "https://hermes-labs.ai/case-studies/cisa-vulnrichment-score-consistency"
-Repository = "https://github.com/hermes-labs-ai/hermes-cvss-consistency"
-Issues = "https://github.com/hermes-labs-ai/hermes-cvss-consistency/issues"
+Repository = "https://github.com/hermes-labs-ai/hermes-labs-cvss-consistency"
+Issues = "https://github.com/hermes-labs-ai/hermes-labs-cvss-consistency/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]

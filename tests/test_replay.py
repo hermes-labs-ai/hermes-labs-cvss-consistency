@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from hermes_cvss_consistency.__main__ import run
+from hermes_labs_cvss_consistency.__main__ import run
 
 
 ROOT = Path(__file__).parents[1]

@@ -1,4 +1,4 @@
-"""Command-line interface for hermes-cvss-consistency."""
+"""Command-line interface for Hermes Labs CVSS Consistency."""
 
 from __future__ import annotations
 
@@ -56,7 +56,7 @@ def run(paths: list[Path]) -> tuple[dict[str, Any], int]:
         "errors": errors,
         "results": results,
         "schema_version": 1,
-        "tool": "hermes-cvss-consistency",
+        "tool": "hermes-labs-cvss-consistency",
         "tool_version": __version__,
     }
     if errors or any(item["status"] == "invalid" for item in results):
