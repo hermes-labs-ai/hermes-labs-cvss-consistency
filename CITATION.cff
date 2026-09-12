@@ -5,6 +5,7 @@ abstract: "An offline checker for stored CVSS 3 score/vector consistency in loca
 authors:
   - family-names: "Bosch Rodriguez"
     given-names: "Rolando"
+    orcid: "https://orcid.org/0009-0005-4896-1112"
     affiliation: "Hermes Labs"
 version: "0.1.0"
 date-released: "2026-09-08"
