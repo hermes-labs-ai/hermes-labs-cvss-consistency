@@ -2,6 +2,11 @@
 
 An offline, read-only CLI that checks whether CVSS 3.0 and 3.1 base scores stored in local CVE 5.x JSON records agree with their vectors. It never fetches data or tests a target.
 
+It is a deterministic check: the same input JSON always produces the same
+score/vector consistency verdict, with no model calls, network access, or
+randomness — so a CVSS score-and-vector contradiction is either reported or
+it isn't, the same way on every run.
+
 ## Replay the correction
 
 ```console
