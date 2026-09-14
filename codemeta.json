@@ -1,0 +1,14 @@
+{
+  "@context": "https://w3id.org/codemeta/3.1",
+  "@type": "SoftwareSourceCode",
+  "name": "hermes-labs-cvss-consistency",
+  "description": "Offline, read-only CLI and fixture replay that checks whether CVSS 3.0/3.1 base scores stored in local CVE 5.x JSON records agree with their vectors. Published as the code artifact behind one Hermes Labs case study on a CISA Vulnrichment score/vector correction; it is not a general-purpose vulnerability-data product.",
+  "codeRepository": "https://github.com/hermes-labs-ai/hermes-labs-cvss-consistency",
+  "version": "0.1.0",
+  "license": "https://spdx.org/licenses/MIT",
+  "programmingLanguage": "Python",
+  "runtimePlatform": "Python >=3.9",
+  "author": [{"@type": "Person", "givenName": "Rolando", "familyName": "Bosch Rodriguez", "identifier": "https://orcid.org/0009-0005-4896-1112"}],
+  "url": "https://hermes-labs.ai/case-studies/cisa-vulnrichment-score-consistency",
+  "keywords": ["CVSS", "CVE", "vulnerability data quality", "consistency checking", "case study"]
+}
