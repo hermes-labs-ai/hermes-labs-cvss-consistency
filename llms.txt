@@ -1,0 +1,26 @@
+# Hermes Labs CVSS Consistency
+
+> Fixture replay and offline checker for CVSS 3.0/3.1 score/vector consistency in local CVE 5.x JSON records, published as the code artifact behind one Hermes Labs case study.
+
+This is a case-study repository, not a general-purpose product. It packages the checker used to reproduce one specific CISA Vulnrichment correction (CVE-2026-14216) and ships the CLI that performs the underlying score/vector comparison.
+
+## Docs
+- [README](README.md): what the checker does, how to replay the correction, exit codes, and fixture provenance
+- [CITATION.cff](CITATION.cff): citation metadata
+- [Case study](https://hermes-labs.ai/case-studies/cisa-vulnrichment-score-consistency): the narrative write-up this repo supports
+
+## Optional
+- [fixtures/provenance.json](fixtures/provenance.json): source repositories, commits, retrieval date, and hashes for the shipped fixtures
+- [archive/README.md](archive/README.md): the archived historical scanner, its exact hash, and its scope
+
+## What this does NOT do
+- It does not fetch data over the network or test a live target; it is offline and read-only.
+- It does not reproduce the original time-bounded corpus audit, general CVE coverage, or exploitation behavior — only the one fixture pair.
+- It is not a general vulnerability-data-quality product; it is the reproducible artifact for a single documented case.
+
+## Maturity
+Version 0.1.0. Small, single-purpose, MIT licensed. No stability guarantees beyond what CITATION.cff and the README state.
+
+## About Hermes Labs
+
+Hermes Labs is an independent AI-reliability lab. More at [hermes-labs.ai](https://hermes-labs.ai).
