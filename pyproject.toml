@@ -10,6 +10,21 @@ readme = "README.md"
 requires-python = ">=3.9"
 license = "MIT"
 authors = [{name = "Hermes Labs", email = "roli@hermes-labs.ai"}]
+keywords = [
+    "cve", "cvss", "vulnerability-management", "security-tools",
+    "data-quality", "static-analysis", "offline-first", "cisa-vulnrichment",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Security",
+    "Topic :: Software Development :: Quality Assurance",
+    "Environment :: Console",
+    "Operating System :: OS Independent",
+]
 dependencies = ["cvss==3.6"]
 
 [project.optional-dependencies]
