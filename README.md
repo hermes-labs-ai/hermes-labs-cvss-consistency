@@ -38,6 +38,12 @@ CISA confirmed the correction in the issue, and the refreshed record appears in 
 
 The original fixed-snapshot run recorded 178,776 JSON records seen, 5,324 eligible CISA ADP records, and 1,060 CVSS 3.x metrics checked. Those historical counts are tied to result SHA-256 `463f28d4ba2e3bdb2eadc81758d0cb80481ab40565b616653a2fe22d1c51d6ce`; they are not output from this fixture replay.
 
+## Contributing
+
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for environment setup, running
+`tests/test_replay.py`, fixture/provenance handling, and how to report a
+security issue.
+
 ## License and citation
 
 The checker software is MIT licensed. The copied public records retain their upstream terms: CISA publishes Vulnrichment under [CC0-1.0](https://github.com/cisagov/vulnrichment/blob/develop/LICENSE), and cvelistV5 directs record users to the [CVE Program Terms of Use](https://www.cve.org/Legal/TermsOfUse). Citation metadata for this software is available in [`CITATION.cff`](CITATION.cff). The companion case study is at <https://hermes-labs.ai/case-studies/cisa-vulnrichment-score-consistency>.
