@@ -1,0 +1,33 @@
+name: CVSS benchmark result
+description: Share a reproducible run of the public consistency challenge.
+title: "Benchmark v1 result: "
+body:
+  - type: input
+    id: revision
+    attributes:
+      label: Benchmark repository commit
+      description: Exact commit SHA containing the cases you ran.
+    validations:
+      required: true
+  - type: textarea
+    id: implementation
+    attributes:
+      label: Implementation and environment
+      description: Tool version or commit, runtime and operating system.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction commands
+      description: Include setup and run commands. Do not include credentials or private records.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Predictions and scorer output
+      description: Paste both complete JSON objects, including failures.
+      render: json
+    validations:
+      required: true

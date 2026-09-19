@@ -1,0 +1,150 @@
+{
+  "benchmark": "cvss-consistency-v1",
+  "cases": [
+    {
+      "id": "public-before",
+      "fixture": "fixtures/CVE-2026-14216.before.json",
+      "expected": "mismatch"
+    },
+    {
+      "id": "public-after",
+      "fixture": "fixtures/CVE-2026-14216.after.json",
+      "expected": "consistent"
+    },
+    {
+      "id": "medium-consistent",
+      "record": {
+        "containers": {
+          "cna": {
+            "metrics": [
+              {
+                "cvssV3_1": {
+                  "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+                  "baseScore": 6.5
+                }
+              }
+            ]
+          }
+        }
+      },
+      "expected": "consistent"
+    },
+    {
+      "id": "medium-wrong-score",
+      "record": {
+        "containers": {
+          "cna": {
+            "metrics": [
+              {
+                "cvssV3_1": {
+                  "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+                  "baseScore": 5.3
+                }
+              }
+            ]
+          }
+        }
+      },
+      "expected": "mismatch"
+    },
+    {
+      "id": "critical-consistent",
+      "record": {
+        "containers": {
+          "cna": {
+            "metrics": [
+              {
+                "cvssV3_1": {
+                  "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+                  "baseScore": 9.8
+                }
+              }
+            ]
+          }
+        }
+      },
+      "expected": "consistent"
+    },
+    {
+      "id": "critical-wrong-score",
+      "record": {
+        "containers": {
+          "cna": {
+            "metrics": [
+              {
+                "cvssV3_1": {
+                  "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+                  "baseScore": 6.5
+                }
+              }
+            ]
+          }
+        }
+      },
+      "expected": "mismatch"
+    },
+    {
+      "id": "boolean-score",
+      "record": {
+        "containers": {
+          "cna": {
+            "metrics": [
+              {
+                "cvssV3_1": {
+                  "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+                  "baseScore": true
+                }
+              }
+            ]
+          }
+        }
+      },
+      "expected": "invalid"
+    },
+    {
+      "id": "string-score",
+      "record": {
+        "containers": {
+          "cna": {
+            "metrics": [
+              {
+                "cvssV3_1": {
+                  "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+                  "baseScore": "6.5"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "expected": "invalid"
+    },
+    {
+      "id": "invalid-vector",
+      "record": {
+        "containers": {
+          "cna": {
+            "metrics": [
+              {
+                "cvssV3_1": {
+                  "vectorString": "CVSS:3.1/invalid",
+                  "baseScore": 6.5
+                }
+              }
+            ]
+          }
+        }
+      },
+      "expected": "invalid"
+    },
+    {
+      "id": "no-metrics",
+      "record": {
+        "containers": {
+          "cna": {}
+        }
+      },
+      "expected": "invalid"
+    }
+  ]
+}
