@@ -7,6 +7,21 @@ score/vector consistency verdict, with no model calls, network access, or
 randomness — so a CVSS score-and-vector contradiction is either reported or
 it isn't, the same way on every run.
 
+## GitHub Action scorer
+
+The root [`action.yml`](action.yml) scores a caller-owned predictions JSON file
+against this fixed ten-case starter manifest. Pin a released immutable commit
+when using it in CI. It returns the exact score receipt, a scoped job summary, and a local receipt
+path; it does not upload artifacts. Prediction files are limited to 64 KiB. Set `fail-on-mismatch: "true"` only when a
+non-perfect result should fail the job.
+
+```yaml
+- uses: hermes-labs-ai/hermes-labs-cvss-consistency@4b0985b442cef0069d18de5c4811c433a2c77209
+  with:
+    predictions-path: results/predictions.json
+    fail-on-mismatch: "false"
+```
+
 ## Replay the correction
 
 ```console
