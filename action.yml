@@ -1,0 +1,28 @@
+name: CVSS consistency benchmark
+description: Score predictions against the fixed public 10-case CVSS consistency starter benchmark.
+inputs:
+  predictions-path:
+    description: Caller-owned JSON predictions file with exactly the published case IDs.
+    required: true
+  fail-on-mismatch:
+    description: Fail when any fixed benchmark case is misclassified.
+    default: "false"
+outputs:
+  receipt:
+    description: Exact bounded JSON score receipt.
+    value: ${{ steps.score.outputs.receipt }}
+  artifact-path:
+    description: Local path to the score receipt; callers may upload it explicitly.
+    value: ${{ steps.score.outputs.artifact-path }}
+runs:
+  using: composite
+  steps:
+    - id: score
+      shell: bash
+      env:
+        PREDICTIONS_PATH: ${{ inputs.predictions-path }}
+        FAIL_ON_MISMATCH: ${{ inputs.fail-on-mismatch }}
+      run: |
+        python3 "$GITHUB_ACTION_PATH/benchmark/action_score.py" \
+          --predictions "$PREDICTIONS_PATH" \
+          --fail-on-mismatch "$FAIL_ON_MISMATCH"

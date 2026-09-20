@@ -23,3 +23,29 @@ jobs:
         run: python3 -m pip install -e '.[test]'
       - name: Run declared full gate
         run: python3 .hermes/hermes_gate_runner.py full
+      - name: Generate caller prediction fixtures
+        run: |
+          python3 benchmark/run.py reference > "$RUNNER_TEMP/predictions.json"
+          python3 -c 'import json,sys; p=json.load(open(sys.argv[1])); print(json.dumps({k: "consistent" for k in p}))' "$RUNNER_TEMP/predictions.json" > "$RUNNER_TEMP/wrong.json"
+      - id: score
+        uses: ./
+        with:
+          predictions-path: ${{ runner.temp }}/predictions.json
+          fail-on-mismatch: 'true'
+      - name: Assert successful Action receipt
+        env:
+          RECEIPT: ${{ steps.score.outputs.artifact-path }}
+        run: python3 -c 'import json,os; r=json.load(open(os.environ["RECEIPT"])); assert r["correct"] == r["total"] == 10'
+      - id: mismatch
+        continue-on-error: true
+        uses: ./
+        with:
+          predictions-path: ${{ runner.temp }}/wrong.json
+          fail-on-mismatch: 'true'
+      - name: Assert requested mismatch failure
+        env:
+          OUTCOME: ${{ steps.mismatch.outcome }}
+          RECEIPT: ${{ steps.mismatch.outputs.artifact-path }}
+        run: |
+          test "$OUTCOME" = failure
+          python3 -c 'import json,os; r=json.load(open(os.environ["RECEIPT"])); assert r["correct"] == 3 and r["total"] == 10'
