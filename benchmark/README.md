@@ -1,4 +1,4 @@
-# CVSS consistency challenge v1
+# CVSS consistency challenge scorer v1
 
 Try your own checker on ten public cases and publish a reproducible result. The
 job is to classify each record as `consistent`, `mismatch`, or `invalid` from its
@@ -18,6 +18,34 @@ The reference should produce `correct: 10`, `total: 10`, `accuracy: 1.0`, and no
 failed cases. This is a small open starter challenge, not a held-out evaluation
 or an estimate of performance on the CVE corpus. Do not present it as proof that
 a checker finds vulnerabilities or that one product outperforms another.
+
+## Prepare prompts and score saved structured answers
+
+`benchmark/adapter.py` is a local provider-neutral bridge. It does not select a
+model, send a request, or need credentials. `prompts` writes one input record per
+case with opaque IDs and without the published answer labels. Give those records to a system you
+control, save one structured `{ "id", "label" }` answer per case, then
+normalize and score the saved file:
+
+```console
+python benchmark/adapter.py prompts --output model-inputs.json
+# Run your chosen system outside this repository and save its structured answers.
+python benchmark/adapter.py normalize saved-model-outputs.json --output predictions.json
+python benchmark/run.py score predictions.json
+```
+
+For a runnable local schema demonstration, the checked-in sample is a
+hand-authored fixture, not output from a model or provider:
+
+```console
+python benchmark/adapter.py normalize benchmark/examples/sample-structured-answers.json --output predictions.json
+python benchmark/run.py score predictions.json
+```
+
+Normalization rejects missing, extra, duplicate, or non-string IDs and labels,
+and it accepts only `consistent`, `mismatch`, or `invalid`. Prompting and
+scoring are deliberately separate: this ten-case challenge does not measure a
+provider, model, or general CVSS capability.
 
 ## Run your own checker
 

@@ -1,4 +1,4 @@
-"""Run or score the public CVSS consistency challenge; no network calls."""
+"""Run the public CVSS consistency challenge scorer; no network calls."""
 from __future__ import annotations
 
 import argparse
