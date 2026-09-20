@@ -1,0 +1,14 @@
+{
+  "answers": [
+    {"id": "case-01", "label": "mismatch"},
+    {"id": "case-02", "label": "consistent"},
+    {"id": "case-03", "label": "consistent"},
+    {"id": "case-04", "label": "mismatch"},
+    {"id": "case-05", "label": "consistent"},
+    {"id": "case-06", "label": "mismatch"},
+    {"id": "case-07", "label": "invalid"},
+    {"id": "case-08", "label": "invalid"},
+    {"id": "case-09", "label": "invalid"},
+    {"id": "case-10", "label": "invalid"}
+  ]
+}

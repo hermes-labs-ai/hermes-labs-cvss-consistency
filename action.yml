@@ -1,5 +1,5 @@
-name: CVSS consistency benchmark
-description: Score predictions against the fixed public 10-case CVSS consistency starter benchmark.
+name: CVSS consistency challenge scorer
+description: Score predictions against the fixed public 10-case CVSS consistency challenge.
 inputs:
   predictions-path:
     description: Caller-owned JSON predictions file with exactly the published case IDs.

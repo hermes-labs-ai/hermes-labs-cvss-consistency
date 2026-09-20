@@ -1,4 +1,4 @@
-# Hermes Labs CVSS Consistency
+# Hermes Labs CVSS consistency challenge scorer
 
 An offline, read-only CLI that checks whether CVSS 3.0 and 3.1 base scores stored in local CVE 5.x JSON records agree with their vectors. It never fetches data or tests a target.
 
@@ -53,12 +53,13 @@ CISA confirmed the correction in the issue, and the refreshed record appears in 
 
 The original fixed-snapshot run recorded 178,776 JSON records seen, 5,324 eligible CISA ADP records, and 1,060 CVSS 3.x metrics checked. Those historical counts are tied to result SHA-256 `463f28d4ba2e3bdb2eadc81758d0cb80481ab40565b616653a2fe22d1c51d6ce`; they are not output from this fixture replay.
 
-## Public benchmark challenge
+## Public CVSS consistency challenge scorer
 
-[Run the ten-case CVSS consistency challenge](benchmark/README.md), score your own
-checker, and share a reproducible result through the benchmark issue form. The
-versioned starter set includes public before/after fixtures and synthetic edge
-cases; it is not a held-out corpus evaluation.
+[Run the ten-case CVSS consistency challenge scorer](benchmark/README.md), score
+your own checker or normalize saved structured model answers without provider
+credentials, and share a reproducible result through the benchmark issue form.
+The versioned starter set includes public before/after fixtures and synthetic
+edge cases; it is not a held-out corpus evaluation or a provider comparison.
 
 ## Contributing
 
