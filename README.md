@@ -16,7 +16,7 @@ path; it does not upload artifacts. Prediction files are limited to 64 KiB. Set 
 non-perfect result should fail the job.
 
 ```yaml
-- uses: hermes-labs-ai/hermes-labs-cvss-consistency@main
+- uses: hermes-labs-ai/hermes-labs-cvss-consistency@4b0985b442cef0069d18de5c4811c433a2c77209
   with:
     predictions-path: results/predictions.json
     fail-on-mismatch: "false"
