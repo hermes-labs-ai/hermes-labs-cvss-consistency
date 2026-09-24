@@ -44,6 +44,10 @@ Do not edit existing fixture files. If a change requires a new or updated
 fixture, add it alongside a corresponding `provenance.json` entry so the
 source and hash trail stays verifiable.
 
+Use GitHub issues and pull request reviews for proposal and review discussion. Keep
+tracked changes focused on reusable code, tests, documentation, fixtures, and
+provenance that support reproducible checks beyond an individual review.
+
 ## Reporting security issues
 
 Do not open a public issue for a security vulnerability. Follow the
