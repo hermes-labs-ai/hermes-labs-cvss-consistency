@@ -77,3 +77,14 @@ def test_invalid_metric_shapes_and_nonfinite_json_exit_two(tmp_path: Path) -> No
     payload, exit_code = run([nonfinite])
     assert exit_code == 2
     assert payload["errors"][0]["error"].endswith("invalid JSON constant: NaN")
+
+
+def test_version_flag_prints_tool_version(capsys) -> None:
+    from hermes_labs_cvss_consistency import __version__
+    from hermes_labs_cvss_consistency.__main__ import main
+
+    with pytest.raises(SystemExit) as exit_info:
+        main(["--version"])
+
+    assert exit_info.value.code == 0
+    assert capsys.readouterr().out.strip() == f"hermes-labs-cvss-consistency {__version__}"

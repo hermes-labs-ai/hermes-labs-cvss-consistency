@@ -29,6 +29,7 @@ git clone https://github.com/hermes-labs-ai/hermes-labs-cvss-consistency.git
 cd hermes-labs-cvss-consistency
 python -m venv .venv && . .venv/bin/activate
 python -m pip install -e '.[test]'
+python -m hermes_labs_cvss_consistency --version
 python -m hermes_labs_cvss_consistency fixtures/CVE-2026-14216.before.json fixtures/CVE-2026-14216.after.json
 ```
 
