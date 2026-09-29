@@ -4,7 +4,7 @@ version = 1
 fast_budget_seconds = 8.0
 full_required_local = false
 adapter_status = "NATIVE_DEFAULT"
-exclusions = [".git/**", ".hermes/hermes_gate_runner.py", ".pytest_cache/**", ".ruff_cache/**", "**/__pycache__/**", "archive/**", "vendor/**", "node_modules/**", "dist/**", "build/**"]
+exclusions = [".git/**", ".hermes/hermes_gate_runner.py", ".pytest_cache/**", ".ruff_cache/**", "**/__pycache__/**", "vendor/**", "node_modules/**", "dist/**", "build/**"]
 
 [adapter]
 enabled = false
