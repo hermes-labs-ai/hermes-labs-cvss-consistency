@@ -14,6 +14,7 @@ from .check import DEPENDENCY_VERSION, check_record
 
 def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Check local CVE JSON CVSS v3 scores against their vectors.")
+    parser.add_argument("--version", action="version", version=f"hermes-labs-cvss-consistency {__version__}")
     parser.add_argument("input", nargs="+", type=Path, help="one or more local JSON files")
     parser.add_argument("--format", choices=("json", "text"), default="json")
     return parser
